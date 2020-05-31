@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/calendar"
-        android:icon="@drawable/chat_icon"
+        android:icon="@drawable/calender_icon"
         android:title="달력" />
     <item
         android:id="@+id/analysis"
-        android:icon="@drawable/chat_icon"
+        android:icon="@drawable/chart_icon"
         android:title="수면분석"
         />
     <item
         android:id="@+id/mypage"
-        android:icon="@drawable/chat_icon"
+        android:icon="@drawable/mypage_icon"
         android:title="개인정보" />
 </menu>
