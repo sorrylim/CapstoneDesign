@@ -35,9 +35,9 @@ class AnalysisFragment : Fragment() {
     //pie데이터
 
         val values=ArrayList<PieEntry>()
-        values.add(PieEntry(34.0f,"test1"))
-        values.add(PieEntry(28.2f,"test2"))
-        values.add(PieEntry(37.9f,"test3"))
+        values.add(PieEntry(30.0f,"깊은수면"))
+        values.add(PieEntry(78.0f,"얕은수면"))
+
         val dataSet = PieDataSet(values,"")
         dataSet.setColors(*ColorTemplate.JOYFUL_COLORS)
 
@@ -47,6 +47,7 @@ class AnalysisFragment : Fragment() {
 
         piechart.data=data
         piechart.animateY(1000,Easing.EaseInCubic)
+        piechart.description.text="수면분석데이터"
 
         return rootView
     }
