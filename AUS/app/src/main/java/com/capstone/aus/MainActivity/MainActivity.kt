@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener)
 
         if (savedInstanceState == null) {
-            val fragment = AnalysisFragment()
+            val fragment = CalendarFragment()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.frame_main, fragment, fragment.javaClass.simpleName).commit()
         }

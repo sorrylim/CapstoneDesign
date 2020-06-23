@@ -11,6 +11,7 @@
         android:layout_height="match_parent">
 
         <CalendarView
+            android:id="@+id/calendar"
             android:layout_width="400dp"
             android:layout_height="400dp"
             app:layout_constraintBottom_toBottomOf="parent"
