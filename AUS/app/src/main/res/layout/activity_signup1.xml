@@ -147,65 +147,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <RadioGroup
-        android:id="@+id/radiogroup_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pwcheck">
-
-        <RadioButton
-            android:id="@+id/radio_male"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="남자"
-            android:textColor="#000000"
-            android:textSize="15dp" />
-
-        <RadioButton
-            android:id="@+id/radio_female"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="여자"
-            android:textColor="#000000"
-            android:textSize="15dp" />
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/edit_age"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:background="@drawable/edittext_signup"
-        android:ems="10"
-        android:inputType="number"
-        android:gravity="right"
-        android:paddingRight="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/radiogroup_gender"
-        app:layout_constraintEnd_toEndOf="@+id/edit_pwcheck"
-        app:layout_constraintStart_toEndOf="@+id/radiogroup_gender"
-        app:layout_constraintTop_toTopOf="@+id/radiogroup_gender" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="세"
-        android:textSize="20dp"
-        android:textColor="#000000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/edit_age"
-        app:layout_constraintEnd_toEndOf="@+id/edit_age" />
-
     <TextView
         android:id="@+id/text_pwcheck"
         android:layout_width="wrap_content"
@@ -221,5 +162,47 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/edit_name"
         app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+
+    <TextView
+        android:id="@+id/edit_tem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="희망온도"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pwcheck" />
+
+    <RadioGroup
+        android:id="@+id/radio_tem"
+        android:layout_width="247dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_tem"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/radiobtn_cold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="18~23도 (시원한온도)" />
+
+        <RadioButton
+            android:id="@+id/radiobtn_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24~26도 (보통)" />
+
+        <RadioButton
+            android:id="@+id/radiobtn_hot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="27~28도(따뜻한온도)" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,6 @@ class UserInfo : Application() {
     companion object{
         var ID : String=""
         var PW : String=""
-
+        var PERFER_TEM:String=""
     }
 }

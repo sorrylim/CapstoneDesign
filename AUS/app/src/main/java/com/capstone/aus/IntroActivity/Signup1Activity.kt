@@ -39,12 +39,6 @@ class Signup1Activity : AppCompatActivity() {
             }
         }
 
-        radiogroup_gender.setOnCheckedChangeListener {radioGroup, i ->
-            when(i) {
-                R.id.radio_male -> gender = "M"
-                R.id.radio_female -> gender = "F"
-            }
-        }
 
         btn_signup1next.setOnClickListener{
             pwEqualCheck()
@@ -56,20 +50,12 @@ class Signup1Activity : AppCompatActivity() {
             {
                 Toast.makeText(this, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
             }
-            else if(gender == "")
-            {
-                Toast.makeText(this, "성별을 확인해주세요.", Toast.LENGTH_SHORT).show()
-            }
-            else if(edit_age.text.toString() == "" || edit_age.text.toString() == null)
-            {
-                Toast.makeText(this, "나이를 확인해주세요.", Toast.LENGTH_SHORT).show()
-            }
+
             else {
+
                 var intent = Intent(this, Signup2Activity::class.java)
                 intent.putExtra("name", edit_name.text.toString())
                 intent.putExtra("pw", edit_pwcheck.text.toString())
-                intent.putExtra("gender", gender)
-                intent.putExtra("age", edit_age.text.toString())
                 startActivity(intent)
             }
         }

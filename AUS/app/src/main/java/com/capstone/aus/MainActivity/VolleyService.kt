@@ -11,7 +11,7 @@ import org.json.JSONObject
 import java.lang.reflect.Method
 
 object VolleyService {
-    val ip= "http://121.181.171.51:2222"
+    val ip= "http://121.181.171.51:3000"
 
     fun getSleepDataReq(userId: String, sleepDate:String, context: Context, success: (JSONArray) -> Unit) {
         var url="${ip}/sleepdata/get"
@@ -51,10 +51,10 @@ object VolleyService {
             , url
             , json
             , Response.Listener {
-                result.put("user", it)
-                if (pw != it.getString("user_pw"))
+                result.put("USER", it)
+                if (pw != it.getString("PASSWORD"))
                     result.put("code", 2)
-                else if (pw == it.getString("user_pw"))
+                else if (pw == it.getString("PASSWORD"))
                     result.put("code", 3)
                 success(result)
             }
