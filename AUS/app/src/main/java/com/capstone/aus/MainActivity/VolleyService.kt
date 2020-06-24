@@ -11,14 +11,15 @@ import org.json.JSONObject
 import java.lang.reflect.Method
 
 object VolleyService {
-    val ip= "http://121.181.171.51:2222"
+    val ip= "http://121.181.171.51:3000"
 
-    fun getSleepDataReq(userId: String, sleepDate:String, context: Context, success: (JSONArray) -> Unit) {
+    fun getSleepDataReq(userId: String, sleepDate:String, nsleepDate:String, context: Context, success: (JSONArray) -> Unit) {
         var url="${ip}/sleepdata/get"
 
         var json= JSONObject()
         json.put("user_id", userId)
         json.put("sleep_date", sleepDate)
+        json.put("nsleep_date", nsleepDate)
 
         var array = JSONArray()
         array.put(json)
@@ -27,6 +28,30 @@ object VolleyService {
             Method.POST,
             url,
             array,
+            Response.Listener {
+                success(it)
+            },
+            Response.ErrorListener {
+                Log.d("volleysorvice", "${it}")
+            }){
+        }
+        Log.d("test", "test")
+
+        Volley.newRequestQueue(context).add(request)
+    }
+
+    fun getSleepInfoReq(userId: String, sleepDate:String, context: Context, success: (JSONObject) -> Unit) {
+        var url="${ip}/sleepdata/get/sleepinfo"
+
+        var json= JSONObject()
+        json.put("user_id", userId)
+        json.put("sleep_date", sleepDate)
+
+
+        var request=object : JsonObjectRequest(
+            Method.POST,
+            url,
+            json,
             Response.Listener {
                 success(it)
             },
