@@ -17,17 +17,29 @@ router.post('/login', function(req, res, next){
 })
 
 router.post('/join', function (req, res, next) {
-  var id = req.body.ID
-  var password = req.body.PASSWORD
-  var temperate = req.body.TEMPERATE
+  var id = req.body.id
+  var password = req.body.password
+  var temperature = req.body.temperature
  
-  db_user.join(id, password,temperate, function (err, result) {
+  db_user.join(id, password,temperature, function (err, result) {
     if (err) console.log(err)
     else {
       var result = new Object()
       result.result = "success"
       console.log("회원가입")
       res.send(result)
+    }
+  })
+})
+
+router.post('/id_check', function (req, res, next) {
+  var id = req.body.id
+ 
+  db_user.id_check(id,function (err, result) {
+    if (err) console.log(err)
+    else {
+      var data=result[0]
+      res.send(data)
     }
   })
 })

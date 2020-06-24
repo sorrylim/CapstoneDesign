@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".IntroActivity.Signup2Activity"></activity>
+        <activity android:name=".IntroActivity.Device1Activity"></activity>
         <activity android:name=".IntroActivity.Signup1Activity" />
         <activity android:name=".IntroActivity.LoginActivity" >
             <intent-filter>
