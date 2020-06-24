@@ -76,10 +76,10 @@ object VolleyService {
             , url
             , json
             , Response.Listener {
-                result.put("user", it)
-                if (pw != it.getString("user_pw"))
+                result.put("USER", it)
+                if (pw != it.getString("PASSWORD"))
                     result.put("code", 2)
-                else if (pw == it.getString("user_pw"))
+                else if (pw == it.getString("PASSWORD"))
                     result.put("code", 3)
                 success(result)
             }

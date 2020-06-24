@@ -38,9 +38,10 @@ class LoginActivity : AppCompatActivity() {
                     }
                     3 -> {
                         // var token= FirebaseInstanceId.getInstance().token
-                        var user = success.getJSONObject("user")
-                        UserInfo.ID = user.getString("user_id")
-                        UserInfo.PW = user.getString("user_pw")
+                        var user = success.getJSONObject("USER")
+                        UserInfo.ID = user.getString("USER_ID")
+                        UserInfo.PW = user.getString("PASSWORD")
+                        UserInfo.PERFER_TEM=user.getString("TEMPERATURE")
 
 
                         //   VolleyService.insertTokenReq(UserInfo.ID,token,this)
@@ -49,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
                         var editor = pref.edit()
                         editor.putString("ID", UserInfo.ID)
                             .putString("PW", UserInfo.PW)
+                            .putString("PERFER_TEM",UserInfo.PERFER_TEM)
                             .apply()
 
                         var intent: Intent = Intent(this, MainActivity::class.java)
