@@ -20,6 +20,7 @@ import com.github.mikephil.charting.data.Entry
 import android.R.attr.entries
 import com.capstone.aus.R
 import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.formatter.PercentFormatter
 import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.util.ChartUtils
@@ -36,7 +37,7 @@ class AnalysisFragment : Fragment() {
 
         val values=ArrayList<PieEntry>()
         values.add(PieEntry(30.0f,"깊은수면"))
-        values.add(PieEntry(78.0f,"얕은수면"))
+        values.add(PieEntry(70.0f,"얕은수면"))
 
         val dataSet = PieDataSet(values,"")
         dataSet.setColors(*ColorTemplate.JOYFUL_COLORS)
@@ -45,9 +46,17 @@ class AnalysisFragment : Fragment() {
         val data=PieData(dataSet)
         data.setValueFormatter(PercentFormatter())
 
+        data.setValueTextSize(15f)
+        data.setValueTextColor(Color.parseColor("#FFFFFF"))
+
         piechart.data=data
         piechart.animateY(1000,Easing.EaseInCubic)
         piechart.description.text="수면분석데이터"
+        piechart.description.setTextSize(15f)
+
+        var legend: Legend = piechart.getLegend()
+
+        legend.setTextSize(15f)
 
         return rootView
     }
