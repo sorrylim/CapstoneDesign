@@ -36,12 +36,7 @@ class MainActivity : AppCompatActivity() {
 
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.analysis -> {
-                val fragment = AnalysisFragment()
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.frame_main, fragment, fragment.javaClass.simpleName).commit()
-                return@OnNavigationItemSelectedListener true
-            }
+
             R.id.mypage -> {
                 val fragment = MypageFragment()
                 supportFragmentManager.beginTransaction()
