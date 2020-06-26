@@ -30,7 +30,7 @@ import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.util.ChartUtils
 
 
-class AnalysisFragment(val lowCount:Int, val deepCount:Int, val day : String, val sleepStart:String, val sleepEnd:String) : Fragment() {
+class AnalysisFragment(val lowCount:Int, val deepCount:Int, val day: String, val nday:String, val sleepStart:String, val sleepEnd:String) : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -102,7 +102,7 @@ class AnalysisFragment(val lowCount:Int, val deepCount:Int, val day : String, va
             scoreText.text = "0점"
         }
 
-        dateText.text = "${day} ${sleepStart} ~ ${day} ${sleepStart}"
+        dateText.text = "${day} ${sleepStart} ~ ${nday} ${sleepEnd}"
 
 
 
