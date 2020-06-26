@@ -5,7 +5,7 @@ var db_user = require('../public/SQL/user_sql')();
 
 
 router.post('/login', function(req, res, next){
-  var user_id = req.body[0].id
+  var user_id = req.body.id
 
   db_user.login(user_id, function(err, result){
     if(err) console.log(err)

@@ -42,4 +42,16 @@ router.post('/insert', function(req, res, next){
     })
 })
 
+router.post('/check', function(req, res, next){
+   
+    db_device.check_device( function(err, result){
+        if(err) console.log(err)
+        else {
+            var object = new Object()
+            object.result = "success"
+            res.send(object)
+        }
+    })
+})
+
 module.exports = router;

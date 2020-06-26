@@ -160,14 +160,12 @@ object VolleyService {
 
 
     fun deviceReq(
-        id: String,
         context: Context,
         success: (String?) -> Unit
     ) {
-        val url = "${ip}/user/deviceReq"
+        val url = "${ip}/device/check"
 
         val json = JSONObject()
-        json.put("id", id)
 
         var request = object : JsonObjectRequest(
             Method.POST

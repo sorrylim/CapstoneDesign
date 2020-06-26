@@ -22,6 +22,18 @@ module.exports = function() {
                 })
             })
         },
+
+        check_device: function(callback){
+            pool.getConnetion(function(err,con){
+            var sql=`select * from DEVICES`
+                con.query(sql,function(err,result,fields){
+                con,release()
+                    if(err)console.log(err);
+                    else callback(null, result)
+                })
+            })
+        },
+
         pool: pool
     }
 };
