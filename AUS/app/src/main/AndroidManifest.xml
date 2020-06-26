@@ -18,14 +18,16 @@
         <activity android:name=".IntroActivity.Device3Activity"/>
         <activity android:name=".IntroActivity.Signup1Activity" />
         <activity android:name=".IntroActivity.LoginActivity" >
+
+
+        </activity>
+        <activity android:name=".MainActivity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".MainActivity.MainActivity"/>
 
     </application>
 
