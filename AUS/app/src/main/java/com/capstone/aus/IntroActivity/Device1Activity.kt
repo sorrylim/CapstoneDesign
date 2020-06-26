@@ -12,7 +12,7 @@ class Device1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product1)
 
-        btn_de_next.setOnClickListener {
+        text_next.setOnClickListener {
             var intent = Intent(this, Device2Activity::class.java)
             startActivity(intent)
         }
