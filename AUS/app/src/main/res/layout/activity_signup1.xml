@@ -164,7 +164,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
     <TextView
-        android:id="@+id/edit_tem"
+        android:id="@+id/text_tem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -175,34 +175,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_pwcheck" />
 
-    <RadioGroup
-        android:id="@+id/radio_tem"
-        android:layout_width="247dp"
-        android:layout_height="101dp"
+    <EditText
+        android:id="@+id/edit_tem"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edittext_signup"
+        android:hint="희망온도를 숫자로 입력하세요."
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_tem"
-        app:layout_constraintVertical_bias="0.0">
-
-        <RadioButton
-            android:id="@+id/radiobtn_cold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="18~23도 (시원한온도)" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_mid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="24~26도 (보통)" />
-
-        <RadioButton
-            android:id="@+id/radiobtn_hot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="27~28도(따뜻한온도)" />
-    </RadioGroup>
+        app:layout_constraintTop_toBottomOf="@+id/text_tem"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

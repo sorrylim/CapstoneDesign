@@ -9,6 +9,9 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 import java.lang.reflect.Method
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 object VolleyService {
     val ip= "http://121.181.171.51:3000"
@@ -99,5 +102,86 @@ object VolleyService {
         //요청을 보내는 부분
         Volley.newRequestQueue(context).add(request)
     }
+    fun joinReq(
+        id: String,
+        password: String,
+        temperature: String,
 
+        context: Context,
+        success: (JSONObject) -> Unit
+    ) {
+        val url = "${ip}/user/join"
+
+        val json = JSONObject()
+        json.put("id", id)
+        json.put("password", password)
+        json.put("temperature", temperature)
+
+
+        var request = object : JsonObjectRequest(Method.POST
+            , url
+            , json
+            , Response.Listener {
+                success(it)
+            }
+            , Response.ErrorListener {
+
+            }
+        ) {
+        }
+        Volley.newRequestQueue(context).add(request)
+    }
+
+    fun idCheckReq(
+        id: String,
+        context: Context,
+        success: (String?) -> Unit
+    ) {
+        val url = "${ip}/user/id_check"
+
+        val json = JSONObject()
+        json.put("id", id)
+
+        var request = object : JsonObjectRequest(
+            Method.POST
+            , url
+            , json
+            , Response.Listener {
+                success("fail")
+
+            }
+            , Response.ErrorListener {
+                if (it is com.android.volley.ParseError) success("success")
+            }
+        ) {
+        }
+        Volley.newRequestQueue(context).add(request)
+    }
+
+
+    fun deviceReq(
+        id: String,
+        context: Context,
+        success: (String?) -> Unit
+    ) {
+        val url = "${ip}/user/deviceReq"
+
+        val json = JSONObject()
+        json.put("id", id)
+
+        var request = object : JsonObjectRequest(
+            Method.POST
+            , url
+            , json
+            , Response.Listener {
+                success("fail")
+
+            }
+            , Response.ErrorListener {
+                if (it is com.android.volley.ParseError) success("success")
+            }
+        ) {
+        }
+        Volley.newRequestQueue(context).add(request)
+    }
 }

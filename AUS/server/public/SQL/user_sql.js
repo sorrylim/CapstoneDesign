@@ -14,15 +14,26 @@ module.exports = function () {
             })
         },
 
-        join: function (id, password,temperate, callback) {
+        join: function (id, password,temperature, callback) {
             pool.getConnection(function (err, con) {
-              var sql = `insert into USER values('${id}','${password}','${temperate}')`
+              var sql = `insert into USER values('${id}','${password}','${temperature}')`
               con.query(sql, function (err, result) {
                 con.release()
                 if (err) callback(err)
                 else callback(null, result)
               })
             })
+          },
+
+          id_check:function(id,callback){
+            pool.getConnection(function (err, con) {
+            var sql = `select USER_ID from USER where USER_ID='${id}'`
+            con.query(sql, function (err, result) {
+              con.release()
+              if (err) callback(err)
+              else callback(null, result)
+            })
+          })
           },
         pool: pool
     }
