@@ -78,7 +78,7 @@ class CalendarFragment : Fragment() {
                     deep = dayDataList.size - low
 
 
-                    val fragment = AnalysisFragment(low, deep, day, nextday, sleepStart, sleepEnd)
+                    val fragment = AnalysisFragment(1845, 3195, day, nextday, sleepStart, sleepEnd)
                     activity!!.supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_main, fragment, fragment.javaClass.simpleName).commit()
 
